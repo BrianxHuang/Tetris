@@ -28,6 +28,13 @@ function generate(){
       block_pos = [[start_y,strat_x],[start_y,strat_x+1],[start_y-1,strat_x+1],[start_y-1,strat_x+2],"Z"];
       break;
   }   
+  for (let i = 0; i<4;i++)
+  {
+    if (blockstatus[block_pos[i][0]][block_pos[i][1]]==true)
+    {      
+      return gameover();
+    }
+  }
   count = false;
   return block_pos;
 

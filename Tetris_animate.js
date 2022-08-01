@@ -193,7 +193,7 @@ function block_wipe(block_pos){
     }  
 }
 function block_stack(block_pos){
-    for (let i = 0; i<4;i++){
+    for (let i = 0; i<4;i++){ 
         if (block_pos[i][0]==0){
             for (let j = 0; j<4;j++){
                 blockstatus[block_pos[j][0]][block_pos[j][1]]=true;                
@@ -209,7 +209,7 @@ function block_stack(block_pos){
             } 
             block_cancel();        
             return true;
-        }        
+        }                
     }
     return false;
 }
@@ -261,5 +261,24 @@ function block_cancel(){
         }      
     }
     
+}
+function gameover(){
+    alert('Gameover!');
+    for (let i=max_height-1;i>=0;i--){        
+        blockstatus[i] = new Array(max_width)        
+        for (let j = 0;j<max_width;j++)    
+        {                    
+            blockstatus[i][j]=false;
+            blockarray[i][j].style.backgroundColor = "White";
+        }
+    }
+    rowstatus = new Array(max_height);
+    dropid = null
+    moveid = null;
+    generateid = null;
+    count = true;     
+    alert('Please press "enter" to start');
+    block_pos=generate();
+    return block_pos;
 }
     

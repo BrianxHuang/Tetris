@@ -42,7 +42,7 @@ var count = true;
 statusa = true; //check whther ever collision
 //Listen keyborad
 var block_pos
-
+alert('Please press "enter" to start');
 window.addEventListener('keydown',  function(e){    
     block_pos=move(block_pos,e.key);          
 })
